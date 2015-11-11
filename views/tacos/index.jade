@@ -5,8 +5,15 @@ block content
   p Welcome to #{title}
   p
     ul
-    each taco in tacos
-      li Shell Type: #{taco.shell} --**-- Taste: #{taco.taste}
-      a(href='/tacos/update/' + taco.id) Edit This Taco
+      each taco in tacos
+        li
+          a(href='/tacos/'+ taco.id) Shell Type: #{taco.shell} --**-- Taste: #{taco.taste}
+          p
+          if tacos.length < 2
+            a(href='/tacos/update/' + taco.id) Edit This Taco
+        p
   p
   a(href='/tacos/add') Add a taco
+  p
+  if tacos.length < 2
+    a(href='/tacos') Index page
