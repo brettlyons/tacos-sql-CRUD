@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p
+    form(method='post' action='/tacos')
+      label(for='shell') Shell:
+      input(type='text' name='shell')
+      label(for='taste') Taste:
+      input(type='text' name='taste')
+      input(type='submit' value='Add Taco')
+
+  p
+  a(href='/tacos') Index of Tacos

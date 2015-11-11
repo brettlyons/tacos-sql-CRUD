@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p
+    form(method='post' action='/tacos/update/' + taco.id)
+      label(for='shell') Shell:
+      input(type='text' name='shell' value=taco.shell)
+      label(for='taste') Taste:
+      input(type='text' name='taste' value=taco.taste)
+      input(type='submit' value='Update Taco')
+  p
+    a(href="/tacos/delete/" + taco.id) Delete this Taco ( NOT REVERSIBLE )
+
+  p
+    a(href="/tacos") Index Of Tacos
+

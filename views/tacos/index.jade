@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p
+    ul
+    each taco in tacos
+      li Shell Type: #{taco.shell} --**-- Taste: #{taco.taste}
+      a(href='/tacos/update/' + taco.id) Edit This Taco
+  p
+  a(href='/tacos/add') Add a taco
